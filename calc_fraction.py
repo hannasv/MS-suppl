@@ -116,24 +116,3 @@ def compute(satfil, lats = None, lons = None):
     import pandas as pd
 
     return pd.DataFrame.from_dict(fractions), pairs
-
-
-if __name__ == '__main__':
-
-    import glob
-    import os
-    import json
-
-    import numpy as np
-
-    save_dir = '/home/hanna/images_simple_statsmodels/'
-    # sat_dir = '/uio/lagringshotellet/geofag/students/metos/hannasv/sat_images_2004_2011/'
-    sat_dir = '/home/hanna/lagrings/sat_images_2004_2011/'
-
-    data_grid = get_dict_with_all_keys()
-
-    lats = np.arange(-15.0, 25.0, 0.25)
-    lons = np.arange(30.0, 50.0, 0.25)
-    sat_files = glob.glob(sat_dir + "./**/*.grb", recursive = True)
-    #print("len sat files {}".format(len(sat_files)))
-    #df_sat_files, pairs = compute(satfil, lats, lons)
